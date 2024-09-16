@@ -1,6 +1,12 @@
+using AlaskaShop.Infra;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+string connectionStrings = builder.Configuration.GetConnectionString("Default") ?? "";
+
+builder.Services.AddDbContext<Context>(options => options.UseNpgsql(connectionStrings));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
