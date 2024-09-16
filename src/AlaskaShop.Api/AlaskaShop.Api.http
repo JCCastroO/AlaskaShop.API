@@ -1,0 +1,6 @@
+@AlaskaShop.Api_HostAddress = http://localhost:5135
+
+GET {{AlaskaShop.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
