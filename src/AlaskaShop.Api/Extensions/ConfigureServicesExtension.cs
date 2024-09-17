@@ -20,7 +20,7 @@ public static class ConfigureServicesExtension
     private static void ConfigureDatabase(IServiceCollection services, ConfigurationManager configuration)
     {
         string connectionStrings = configuration.GetConnectionString("Default")!;
-        services.AddDbContext<Context>(options => options.UseNpgsql(connectionStrings), ServiceLifetime.Scoped);
+        services.AddDbContext<Context>(options => options.UseNpgsql(connectionStrings), ServiceLifetime.Singleton);
     }
 
     private static void ConfigureMediatR(IServiceCollection services)

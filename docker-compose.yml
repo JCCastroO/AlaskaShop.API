@@ -19,18 +19,9 @@ services:
       - POSTGRES_PASSWORD=jc01022001
     volumes:
       - 'alaskashop.database:/var/lib/postgresql/data'
-    networks:
-      database:
 volumes:
   alaskashop.database:
     name: alaskashop.database
     driver: local
-networks:
-  database:
-    name: database
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
 
 

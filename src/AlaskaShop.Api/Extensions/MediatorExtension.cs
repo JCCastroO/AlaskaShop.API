@@ -1,21 +1,19 @@
 ﻿using AlaskaShop.Shareable.Response;
 using MediatR;
 using Npgsql;
+using OperationResult;
 using System.Net;
 
 namespace AlaskaShop.Api.Extensions;
 
 public static class MediatorExtension
 {
-    public static async Task<IResult> SendCommand(this IMediator mediator, object request)
-    {
-        var result = mediator.Send(request);
-
-        if (result.IsCompletedSuccessfully)
-            return await Task.Run(() => Results.Ok(result));
-
-        return HandleError(result.Exception);
-    }
+    public static async Task<IResult> SendCommand<T>(this IMediator mediator, IRequest<Result<T>> request)
+        => await mediator.Send(request) switch
+        {
+            (true, var result, _) => Results.Ok(result),
+            var (_, _, error) => HandleError(error)
+        };
 
     private static IResult HandleError(Exception? error)
         => error switch

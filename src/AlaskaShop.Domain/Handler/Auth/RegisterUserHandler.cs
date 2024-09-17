@@ -6,10 +6,11 @@ using AlaskaShop.Shareable.Request.Auth;
 using AlaskaShop.Shareable.Response.Auth;
 using AutoMapper;
 using MediatR;
+using OperationResult;
 
 namespace AlaskaShop.Domain.Handler.Auth;
 
-public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, RegisterUserResponse>
+public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Result<RegisterUserResponse>>
 {
     private readonly IRegisterUserRepository _repository;
     private readonly IMapper _mapper;
@@ -20,18 +21,18 @@ public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Register
         _mapper = mapper;
     }
 
-    public async Task<RegisterUserResponse> Handle(RegisterUserRequest request, CancellationToken cancellationToken)
+    public async Task<Result<RegisterUserResponse>> Handle(RegisterUserRequest request, CancellationToken cancellationToken)
     {
         var valid = Validate(request.Data);
         if (!valid)
-            throw new ApplicationException("Request inválido!");
+            return new ApplicationException("Request inválido!");
 
         var existingEmail = await _repository.VerifyExistingEmail(request.Data.Email);
         if (existingEmail is not null)
-            throw new ApplicationException("Usuário já cadastrado!");
+            return new ApplicationException("Usuário já cadastrado!");
 
         var newUser = _mapper.Map<UserEntity>(request.Data);
-        newUser.CreatedAt = new DateOnly();
+        newUser.CreatedAt = DateOnly.FromDateTime(DateTime.UtcNow);
         newUser.Active = true;
 
         try
@@ -40,7 +41,7 @@ public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Register
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            return new Exception(ex.Message);
         }
 
         return new RegisterUserResponse("Cadastro realizado com sucesso!");
