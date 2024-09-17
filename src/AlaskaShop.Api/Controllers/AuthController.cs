@@ -11,7 +11,7 @@ public class AuthController : BaseController
 {
     [HttpPost]
     [Route("/register")]
-    [ProducesResponseType(typeof(RegisterUserResponse), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(RegisterUserResponse), StatusCodes.Status200OK)]
     public async Task<IResult> RegisterUser(IMediator m, [FromBody] RegisterUserDto data)
     {
         var request = new RegisterUserRequest(data);

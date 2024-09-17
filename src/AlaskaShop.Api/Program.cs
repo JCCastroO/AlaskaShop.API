@@ -1,6 +1,4 @@
 using AlaskaShop.Api.Extensions;
-using AlaskaShop.Infra;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,3 +26,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program
+{
+    protected Program() { }
+}
