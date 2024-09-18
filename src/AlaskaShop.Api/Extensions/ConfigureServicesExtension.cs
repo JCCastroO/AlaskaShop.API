@@ -1,6 +1,7 @@
 ﻿using AlaskaShop.Domain;
 using AlaskaShop.Domain.Handler.Auth;
 using AlaskaShop.Domain.Services.AutoMapper.Auth;
+using AlaskaShop.Domain.Services.Crypto;
 using AlaskaShop.Infra;
 using AlaskaShop.Infra.Repositories.Auth;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ public static class ConfigureServicesExtension
         ConfigureMediatR(services);
         ConfigureAutoMapper(services);
         ConfigureRepositories(services);
+        ConfigureCrypto(services, configuration);
     }
 
     private static void ConfigureDatabase(IServiceCollection services, ConfigurationManager configuration)
@@ -35,5 +37,11 @@ public static class ConfigureServicesExtension
     private static void ConfigureRepositories(IServiceCollection services)
     {
         services.AddScoped<IRegisterUserRepository, RegisterUserRepository>();
+    }
+
+    private static void ConfigureCrypto(IServiceCollection services, ConfigurationManager configuration)
+    {
+        var key = configuration.GetValue<string>("Settings:Password:Key");
+        services.AddScoped(options => new PasswordEncrypter(key));
     }
 }

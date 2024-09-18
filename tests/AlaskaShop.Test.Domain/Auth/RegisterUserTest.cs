@@ -1,4 +1,5 @@
 ﻿using AlaskaShop.Domain.Handler.Auth;
+using AlaskaShop.Domain.Services.Crypto;
 using AlaskaShop.Infra;
 using AlaskaShop.Infra.Entities;
 using AlaskaShop.Infra.Repositories.Auth;
@@ -17,11 +18,13 @@ public class RegisterUserTest : TestApp
 {
     private readonly RegisterUserRepository _repository;
     private readonly RegisterUserHandler _handler;
+    private readonly PasswordEncrypter _encrypter;
 
     public RegisterUserTest()
     {
         _repository = new(_context);
-        _handler = new(_repository, _mapper);
+        _encrypter = new("@Test");
+        _handler = new(_repository, _mapper, _encrypter);
     }
 
     [Fact]

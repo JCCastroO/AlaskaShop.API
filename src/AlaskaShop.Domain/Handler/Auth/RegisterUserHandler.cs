@@ -1,4 +1,5 @@
-﻿using AlaskaShop.Domain.Services.Validation.Auth;
+﻿using AlaskaShop.Domain.Services.Crypto;
+using AlaskaShop.Domain.Services.Validation.Auth;
 using AlaskaShop.Infra.Entities;
 using AlaskaShop.Infra.Repositories.Auth;
 using AlaskaShop.Shareable.Dtos.Auth;
@@ -14,11 +15,13 @@ public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Result<R
 {
     private readonly IRegisterUserRepository _repository;
     private readonly IMapper _mapper;
+    private readonly PasswordEncrypter _encrypter;
 
-    public RegisterUserHandler(IRegisterUserRepository repository, IMapper mapper)
+    public RegisterUserHandler(IRegisterUserRepository repository, IMapper mapper, PasswordEncrypter encrypter)
     {
         _repository = repository;
         _mapper = mapper;
+        _encrypter = encrypter;
     }
 
     public async Task<Result<RegisterUserResponse>> Handle(RegisterUserRequest request, CancellationToken cancellationToken)
@@ -34,6 +37,7 @@ public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Result<R
         var newUser = _mapper.Map<UserEntity>(request.Data);
         newUser.CreatedAt = DateOnly.FromDateTime(DateTime.UtcNow);
         newUser.Active = true;
+        newUser.Password = _encrypter.Encrypt(newUser.Password);
 
         try
         {
