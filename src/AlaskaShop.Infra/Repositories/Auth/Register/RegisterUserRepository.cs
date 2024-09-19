@@ -1,4 +1,5 @@
 ﻿using AlaskaShop.Infra.Entities;
+using AlaskaShop.Infra.Repositories.Auth.Register;
 using Microsoft.EntityFrameworkCore;
 
 namespace AlaskaShop.Infra.Repositories.Auth;

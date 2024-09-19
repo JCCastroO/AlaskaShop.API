@@ -3,6 +3,7 @@ using AlaskaShop.Domain.Services.Crypto;
 using AlaskaShop.Infra;
 using AlaskaShop.Infra.Entities;
 using AlaskaShop.Infra.Repositories.Auth;
+using AlaskaShop.Infra.Repositories.Auth.Register;
 using AlaskaShop.Shareable.Dtos.Auth;
 using AlaskaShop.Shareable.Request.Auth;
 using AlaskaShop.Shareable.Response.Auth;

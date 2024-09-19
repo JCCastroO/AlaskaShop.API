@@ -1,7 +1,7 @@
 ﻿using AlaskaShop.Domain.Services.Crypto;
 using AlaskaShop.Domain.Services.Validation.Auth;
 using AlaskaShop.Infra.Entities;
-using AlaskaShop.Infra.Repositories.Auth;
+using AlaskaShop.Infra.Repositories.Auth.Register;
 using AlaskaShop.Shareable.Dtos.Auth;
 using AlaskaShop.Shareable.Request.Auth;
 using AlaskaShop.Shareable.Response.Auth;
@@ -38,6 +38,7 @@ public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Result<R
         newUser.CreatedAt = DateOnly.FromDateTime(DateTime.UtcNow);
         newUser.Active = true;
         newUser.Password = _encrypter.Encrypt(newUser.Password);
+        newUser.UserIdentifier = Guid.NewGuid();
 
         try
         {

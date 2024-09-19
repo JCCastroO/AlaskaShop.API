@@ -1,5 +1,6 @@
 ﻿using AlaskaShop.Infra.Entities;
 using AlaskaShop.Infra.Repositories.Auth;
+using AlaskaShop.Infra.Repositories.Auth.Register;
 using Bogus;
 using FluentAssertions;
 

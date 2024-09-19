@@ -17,4 +17,13 @@ public class AuthController : BaseController
         var request = new RegisterUserRequest(data);
         return await m.SendCommand(request);
     }
+
+    [HttpPost]
+    [Route("/login")]
+    [ProducesResponseType(typeof(LoginUserResponse), StatusCodes.Status200OK)]
+    public async Task<IResult> LoginUser(IMediator m, [FromBody] LoginUserDto data)
+    {
+        var request = new LoginUserRequest(data);
+        return await m.SendCommand(request);
+    }
 }

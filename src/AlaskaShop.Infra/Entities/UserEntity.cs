@@ -12,5 +12,5 @@ public class UserEntity : BaseEntity
     public string Email { get; set; } = string.Empty;
     [Required]
     public bool Active { get; set; } = false;
-    public string AccessToken { get; set; } = string.Empty;
+    public Guid UserIdentifier { get; set; } = default!;
 }

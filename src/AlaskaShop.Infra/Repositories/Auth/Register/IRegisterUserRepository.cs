@@ -1,6 +1,6 @@
 ﻿using AlaskaShop.Infra.Entities;
 
-namespace AlaskaShop.Infra.Repositories.Auth;
+namespace AlaskaShop.Infra.Repositories.Auth.Register;
 
 public interface IRegisterUserRepository
 {
