@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Devs\\Projetos\\AlaskaShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|d:\\devs\\projetos\\alaskashop\\src\\alaskashop.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|solutionrelative:src\\alaskashop.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6807710D-3E7C-4510-A232-295976A49539}|tests\\AlaskaShop.Test.Domain\\AlaskaShop.Test.Domain.csproj|d:\\devs\\projetos\\alaskashop\\tests\\alaskashop.test.domain\\auth\\loginusertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6807710D-3E7C-4510-A232-295976A49539}|tests\\AlaskaShop.Test.Domain\\AlaskaShop.Test.Domain.csproj|solutionrelative:tests\\alaskashop.test.domain\\auth\\loginusertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6807710D-3E7C-4510-A232-295976A49539}|tests\\AlaskaShop.Test.Domain\\AlaskaShop.Test.Domain.csproj|d:\\devs\\projetos\\alaskashop\\tests\\alaskashop.test.domain\\auth\\registerusertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6807710D-3E7C-4510-A232-295976A49539}|tests\\AlaskaShop.Test.Domain\\AlaskaShop.Test.Domain.csproj|solutionrelative:tests\\alaskashop.test.domain\\auth\\registerusertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6FCD027-DD80-4D38-8424-52577C31B165}|tests\\AlaskaShop.Test.Infra\\AlaskaShop.Test.Infra.csproj|d:\\devs\\projetos\\alaskashop\\tests\\alaskashop.test.infra\\testapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6FCD027-DD80-4D38-8424-52577C31B165}|tests\\AlaskaShop.Test.Infra\\AlaskaShop.Test.Infra.csproj|solutionrelative:tests\\alaskashop.test.infra\\testapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +34,41 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TestApp.cs",
+              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop\\tests\\AlaskaShop.Test.Infra\\TestApp.cs",
+              "RelativeDocumentMoniker": "tests\\AlaskaShop.Test.Infra\\TestApp.cs",
+              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop\\tests\\AlaskaShop.Test.Infra\\TestApp.cs",
+              "RelativeToolTip": "tests\\AlaskaShop.Test.Infra\\TestApp.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T22:38:14.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterUserTest.cs",
+              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop\\tests\\AlaskaShop.Test.Domain\\Auth\\RegisterUserTest.cs",
+              "RelativeDocumentMoniker": "tests\\AlaskaShop.Test.Domain\\Auth\\RegisterUserTest.cs",
+              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop\\tests\\AlaskaShop.Test.Domain\\Auth\\RegisterUserTest.cs",
+              "RelativeToolTip": "tests\\AlaskaShop.Test.Domain\\Auth\\RegisterUserTest.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowDAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T22:33:49.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop\\src\\AlaskaShop.Api\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "src\\AlaskaShop.Api\\appsettings.Development.json",
-              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop\\src\\AlaskaShop.Api\\appsettings.Development.json",
-              "RelativeToolTip": "src\\AlaskaShop.Api\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-19T17:27:58.119Z",
+              "Title": "LoginUserTest.cs",
+              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop\\tests\\AlaskaShop.Test.Domain\\Auth\\LoginUserTest.cs",
+              "RelativeDocumentMoniker": "tests\\AlaskaShop.Test.Domain\\Auth\\LoginUserTest.cs",
+              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop\\tests\\AlaskaShop.Test.Domain\\Auth\\LoginUserTest.cs",
+              "RelativeToolTip": "tests\\AlaskaShop.Test.Domain\\Auth\\LoginUserTest.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAUwGcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T22:33:43.136Z",
               "EditorCaption": ""
             }
           ]

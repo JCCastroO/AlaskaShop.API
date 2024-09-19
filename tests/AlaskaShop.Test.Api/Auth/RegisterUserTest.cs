@@ -35,7 +35,7 @@ public class RegisterUserTest : IClassFixture<TestApp>
         var response = await _httpClient.PostAsJsonAsync("/register", request);
 
         // Assert
-        response.StatusCode.Should().NotBe(HttpStatusCode.OK);
+        response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
     }
 
     private static RegisterUserDto RequestBuilder(int passwordLength)

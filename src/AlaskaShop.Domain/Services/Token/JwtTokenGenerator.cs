@@ -24,10 +24,8 @@ public class JwtTokenGenerator
             SigningCredentials = new SigningCredentials(SecurityKey(), SecurityAlgorithms.HmacSha256Signature),
             Subject = new ClaimsIdentity([new Claim(ClaimTypes.Sid, userIdentifier.ToString())])
         };
-
         var tokenHandler = new JwtSecurityTokenHandler();
         var token = tokenHandler.CreateToken(tokenDescriptor);
-
         return tokenHandler.WriteToken(token);
     }
 

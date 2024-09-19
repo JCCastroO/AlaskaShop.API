@@ -8,6 +8,7 @@ using AlaskaShop.Infra.Repositories.Auth;
 using AlaskaShop.Infra.Repositories.Auth.Login;
 using AlaskaShop.Infra.Repositories.Auth.Register;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace AlaskaShop.Api.Extensions;
 
@@ -59,5 +60,37 @@ public static class ConfigureServicesExtension
         var key = configuration.GetValue<string>("Settings:JwtToken:Key");
         var expiration = configuration.GetValue<int>("Settings:JwtToken:Expiration");
         services.AddScoped(options => new JwtTokenGenerator(key, expiration));
+        services.AddScoped(options => new TokenValidator(key));
+
+        services.AddSwaggerGen(options =>
+        {
+            options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            {
+                Description = @"Cabeçalho de autorização JWT usando o esquema Bearer.
+                        Insira: 'Bearer' [espaço] e então seu token na entrada de texto abaixo.
+                        Exemplo: 'Bearer 12345abcdef'",
+                Name = "Authorization",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer"
+            });
+            options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+            {
+                {
+                    new OpenApiSecurityScheme()
+                    {
+                        Reference = new OpenApiReference()
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        },
+                        Scheme = "oauth2",
+                        Name = "Bearer",
+                        In = ParameterLocation.Header
+                    },
+                    new List<string>()
+                }
+            });
+        });
     }
 }
