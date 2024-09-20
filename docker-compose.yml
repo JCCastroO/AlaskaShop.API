@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  alaskashop.api:
+    image: alaskashop.api
+    build:
+      context: .
+      dockerfile: src/AlaskaShop.Api/Dockerfile
+    depends_on:
+      - alaskashop.database
+  alaskashop.database:
+    container_name: alaskashop.database
+    image: 'postgres:latest'
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=alaskashop.database
+      - POSTGRES_USER=jccastrooli
+      - POSTGRES_PASSWORD=jc01022001
+    volumes:
+      - 'alaskashop.database:/var/lib/postgresql/data'
+volumes:
+  alaskashop.database:
+    name: alaskashop.database
+    driver: local
+
+
