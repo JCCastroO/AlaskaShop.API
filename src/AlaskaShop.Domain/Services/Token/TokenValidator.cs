@@ -21,7 +21,8 @@ public class TokenValidator
             ClockSkew = new TimeSpan(0)
         };
         var tokenHandler = new JwtSecurityTokenHandler();
-        var principal = tokenHandler.ValidateToken(token, validParams, out _);
+        SecurityToken validatedToken;
+        var principal = tokenHandler.ValidateToken(token, validParams, out validatedToken);
         var userIdentifier = principal.Claims.First(c => c.Type == ClaimTypes.Sid).Value;
         return Guid.Parse(userIdentifier);
     }

@@ -20,7 +20,7 @@ namespace AlaskaShop.Api.Extensions;
 
 public static class ConfigureServicesExtension
 {
-    public static void ConfigureServices(this IServiceCollection services, ConfigurationManager configuration)
+    public static void ConfigureServices(this IServiceCollection services, ConfigurationManager configuration, IWebHostEnvironment env)
     {
         ConfigureDatabase(services, configuration);
         ConfigureMediatR(services);
@@ -28,7 +28,7 @@ public static class ConfigureServicesExtension
         ConfigureRepositories(services);
         ConfigureCrypto(services, configuration);
         ConfigureCors(services);
-        ConfigureJwtToken(services, configuration);
+        ConfigureJwtToken(services, configuration, env);
     }
 
     private static void ConfigureDatabase(IServiceCollection services, ConfigurationManager configuration)
@@ -73,7 +73,7 @@ public static class ConfigureServicesExtension
             .AllowAnyHeader()
             .AllowCredentials()));
 
-    private static void ConfigureJwtToken(IServiceCollection services, ConfigurationManager configuration)
+    private static void ConfigureJwtToken(IServiceCollection services, ConfigurationManager configuration, IWebHostEnvironment env)
     {
         var key = configuration.GetValue<string>("Settings:JwtToken:Key");
         var expiration = configuration.GetValue<int>("Settings:JwtToken:Expiration");
@@ -111,21 +111,25 @@ public static class ConfigureServicesExtension
             });
         });
 
-        services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        }).AddJwtBearer(options =>
-        {
-            var tokenKey = Encoding.ASCII.GetBytes(key!);
-            options.TokenValidationParameters = new TokenValidationParameters
+        if (env.IsDevelopment() || env.IsProduction())
+            services.AddAuthentication(options =>
             {
-                IssuerSigningKey = new SymmetricSecurityKey(tokenKey),
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                ClockSkew = TimeSpan.Zero
-            };
-        });
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                var tokenKey = Encoding.ASCII.GetBytes(key!);
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    IssuerSigningKey = new SymmetricSecurityKey(tokenKey),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+        else if (env.IsEnvironment("Testing"))
+            services.AddControllers();
+
         services.AddAuthorization();
     }
 }

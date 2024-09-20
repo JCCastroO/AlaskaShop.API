@@ -1,4 +1,5 @@
 ﻿using AlaskaShop.Domain.Services.AutoMapper.Auth;
+using AlaskaShop.Domain.Services.AutoMapper.Product;
 using AlaskaShop.Infra;
 using AlaskaShop.Infra.Entities;
 using AlaskaShop.Shareable.Dtos.Auth;
@@ -24,6 +25,7 @@ public class TestApp : IDisposable
         var configuration = new MapperConfiguration(config =>
         {
             config.AddProfile<RegisterUserProfile>();
+            config.AddProfile<RegisterProductProfile>();
         });
         _mapper = new Mapper(configuration);
     }

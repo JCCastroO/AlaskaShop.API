@@ -1,16 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Devs\\Projetos\\AlaskaShop\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|d:\\devs\\projetos\\alaskashop\\src\\alaskashop.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|solutionrelative:src\\alaskashop.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|d:\\devs\\projetos\\alaskashop\\src\\alaskashop.api\\extensions\\configureservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|solutionrelative:src\\alaskashop.api\\extensions\\configureservicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Devs\\Projetos\\AlaskaShop.API\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,21 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop\\src\\AlaskaShop.Api\\Program.cs",
-              "RelativeDocumentMoniker": "src\\AlaskaShop.Api\\Program.cs",
-              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop\\src\\AlaskaShop.Api\\Program.cs",
-              "RelativeToolTip": "src\\AlaskaShop.Api\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACIAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T12:47:04.706Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
@@ -40,19 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ConfigureServicesExtension.cs",
-              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop\\src\\AlaskaShop.Api\\Extensions\\ConfigureServicesExtension.cs",
-              "RelativeDocumentMoniker": "src\\AlaskaShop.Api\\Extensions\\ConfigureServicesExtension.cs",
-              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop\\src\\AlaskaShop.Api\\Extensions\\ConfigureServicesExtension.cs",
-              "RelativeToolTip": "src\\AlaskaShop.Api\\Extensions\\ConfigureServicesExtension.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAkwB0AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T12:44:20.645Z",
-              "EditorCaption": ""
             }
           ]
         }

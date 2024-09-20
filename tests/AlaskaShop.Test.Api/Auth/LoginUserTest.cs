@@ -27,7 +27,7 @@ public class LoginUserTest : IClassFixture<TestApp>
         var request = RequestBuilder();
 
         // Act
-        var response = await _httpClient.PostAsJsonAsync("/login", request);
+        var response = await _httpClient.PostAsJsonAsync("/api/v1/auth/login", request);
 
         // Assert
         response.Should().NotBeNull();
@@ -40,7 +40,7 @@ public class LoginUserTest : IClassFixture<TestApp>
         var request = RequestBuilder();
 
         // Act
-        var response = await _httpClient.PostAsJsonAsync("/login", request);
+        var response = await _httpClient.PostAsJsonAsync("/api/v1/auth/login", request);
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);

@@ -19,7 +19,7 @@ public class RegisterUserTest : IClassFixture<TestApp>
         var request = RequestBuilder(6);
 
         // Act
-        var response = await _httpClient.PostAsJsonAsync("/register", request);
+        var response = await _httpClient.PostAsJsonAsync("/api/v1/auth/register", request);
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -32,7 +32,7 @@ public class RegisterUserTest : IClassFixture<TestApp>
         var request = RequestBuilder(3);
 
         // Act
-        var response = await _httpClient.PostAsJsonAsync("/register", request);
+        var response = await _httpClient.PostAsJsonAsync("/api/v1/auth/register", request);
 
         // Assert
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
