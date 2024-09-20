@@ -2,7 +2,7 @@
 
 namespace AlaskaShop.Api.Controllers;
 
-[Route("api/v1/[controller]")]
+[Route("api/v1/")]
 [ApiController]
 public class BaseController : ControllerBase
 {

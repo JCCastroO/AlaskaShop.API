@@ -44,9 +44,9 @@ public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Result<R
         {
             await _repository.RegisterNewUser(newUser);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            return new Exception(ex.Message);
+            return new ApplicationException("Erro ao registrar novo usuário!");
         }
 
         return new RegisterUserResponse("Cadastro realizado com sucesso!");

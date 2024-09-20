@@ -10,7 +10,7 @@ namespace AlaskaShop.Api.Controllers;
 public class AuthController : BaseController
 {
     [HttpPost]
-    [Route("/register")]
+    [Route("[controller]/register")]
     [ProducesResponseType(typeof(RegisterUserResponse), StatusCodes.Status200OK)]
     public async Task<IResult> RegisterUser(IMediator m, [FromBody] RegisterUserDto data)
     {
@@ -19,7 +19,7 @@ public class AuthController : BaseController
     }
 
     [HttpPost]
-    [Route("/login")]
+    [Route("[controller]/login")]
     [ProducesResponseType(typeof(LoginUserResponse), StatusCodes.Status200OK)]
     public async Task<IResult> LoginUser(IMediator m, [FromBody] LoginUserDto data)
     {
