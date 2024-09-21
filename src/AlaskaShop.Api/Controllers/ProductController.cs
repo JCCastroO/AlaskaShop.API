@@ -1,8 +1,10 @@
 ﻿using AlaskaShop.Api.Extensions;
 using AlaskaShop.Domain.Services.Token;
+using AlaskaShop.Shareable.Dtos;
 using AlaskaShop.Shareable.Dtos.Product;
 using AlaskaShop.Shareable.Request.Product;
 using AlaskaShop.Shareable.Response.Auth;
+using AlaskaShop.Shareable.Response.Product;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,12 +21,22 @@ public class ProductController : BaseController
 
     [HttpPost]
     [Route("[controller]/register")]
-    [ProducesResponseType(typeof(RegisterUserResponse), StatusCodes.Status200OK)]
-    public async Task<IResult> RegisterUser(IMediator m, [FromBody] RegisterProductDto data)
+    [ProducesResponseType(typeof(RegisterProductResponse), StatusCodes.Status200OK)]
+    public async Task<IResult> RegisterProduct(IMediator m, [FromBody] RegisterProductDto data)
     {
         var token = await GetToken(Request.Headers.Authorization.ToString());
         var userIdentifier = _validator.Validate(token);
         var request = new RegisterProductRequest(data, userIdentifier);
+        return await m.SendCommand(request);
+    }
+
+    [HttpGet]
+    [Route("[controller]/list")]
+    [ProducesResponseType(typeof(ListProductResponse), StatusCodes.Status200OK)]
+    public async Task<IResult> ListProducts(IMediator m, [FromQuery] ListProductDto list, [FromQuery] int page, [FromQuery] int pageSize)
+    {
+        var pagination = new PaginationDto() { Page = page, PageSize = pageSize };
+        var request = new ListProductRequest(list, pagination);
         return await m.SendCommand(request);
     }
 
