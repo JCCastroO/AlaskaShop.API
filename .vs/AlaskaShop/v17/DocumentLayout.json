@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Devs\\Projetos\\AlaskaShop.API\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{371F1A50-8AD6-48A9-ADFD-08FB17A8A1E6}|tests\\AlaskaShop.Test.Api\\AlaskaShop.Test.Api.csproj|d:\\devs\\projetos\\alaskashop.api\\tests\\alaskashop.test.api\\product\\listproducttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{371F1A50-8AD6-48A9-ADFD-08FB17A8A1E6}|tests\\AlaskaShop.Test.Api\\AlaskaShop.Test.Api.csproj|solutionrelative:tests\\alaskashop.test.api\\product\\listproducttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|d:\\devs\\projetos\\alaskashop.api\\src\\alaskashop.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A222A6F-7A5D-4AED-BA6A-875723277BFC}|src\\AlaskaShop.Api\\AlaskaShop.Api.csproj|solutionrelative:src\\alaskashop.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{371F1A50-8AD6-48A9-ADFD-08FB17A8A1E6}|tests\\AlaskaShop.Test.Api\\AlaskaShop.Test.Api.csproj|d:\\devs\\projetos\\alaskashop.api\\tests\\alaskashop.test.api\\product\\registerproducttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{371F1A50-8AD6-48A9-ADFD-08FB17A8A1E6}|tests\\AlaskaShop.Test.Api\\AlaskaShop.Test.Api.csproj|solutionrelative:tests\\alaskashop.test.api\\product\\registerproducttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,45 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop.API\\src\\AlaskaShop.Api\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "src\\AlaskaShop.Api\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop.API\\src\\AlaskaShop.Api\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "src\\AlaskaShop.Api\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T22:20:29.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListProductTest.cs",
-              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop.API\\tests\\AlaskaShop.Test.Api\\Product\\ListProductTest.cs",
-              "RelativeDocumentMoniker": "tests\\AlaskaShop.Test.Api\\Product\\ListProductTest.cs",
-              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop.API\\tests\\AlaskaShop.Test.Api\\Product\\ListProductTest.cs",
-              "RelativeToolTip": "tests\\AlaskaShop.Test.Api\\Product\\ListProductTest.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAswCYAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T22:11:09.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterProductTest.cs",
-              "DocumentMoniker": "D:\\Devs\\Projetos\\AlaskaShop.API\\tests\\AlaskaShop.Test.Api\\Product\\RegisterProductTest.cs",
-              "RelativeDocumentMoniker": "tests\\AlaskaShop.Test.Api\\Product\\RegisterProductTest.cs",
-              "ToolTip": "D:\\Devs\\Projetos\\AlaskaShop.API\\tests\\AlaskaShop.Test.Api\\Product\\RegisterProductTest.cs",
-              "RelativeToolTip": "tests\\AlaskaShop.Test.Api\\Product\\RegisterProductTest.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwBQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T22:10:40.13Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -51,6 +51,7 @@ public class ListProductHandler : IRequestHandler<ListProductRequest, Result<Lis
         => (from Product in list
             select new ListProductVo()
             {
+                Id = Product.Id,
                 Name = Product.Name,
                 Price = Product.Price,
                 Image = Product.Image

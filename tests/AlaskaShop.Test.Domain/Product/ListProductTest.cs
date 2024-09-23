@@ -37,9 +37,10 @@ public class ListProductTest : TestApp
         {
             new()
             {
-            Name = product.Name,
-            Image = product.Image,
-            Price = product.Price,
+                Id = product.Id,
+                Name = product.Name,
+                Image = product.Image,
+                Price = product.Price,
             }
         }.ToArray();
         var fakePaginationResponse = new PaginationVo()
@@ -104,6 +105,7 @@ public class ListProductTest : TestApp
 
     private static ProductEntity ProductBuilder()
         => new Faker<ProductEntity>()
+        .RuleFor(p => p.Id, f => f.Random.Long())
         .RuleFor(p => p.Name, f => f.Lorem.Word())
         .RuleFor(p => p.Price, f => f.Random.Double(1.00, 100.00))
         .RuleFor(p => p.Image, f => f.Random.String())

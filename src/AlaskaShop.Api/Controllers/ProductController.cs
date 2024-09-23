@@ -40,6 +40,15 @@ public class ProductController : BaseController
         return await m.SendCommand(request);
     }
 
+    [HttpGet]
+    [Route("[controller]/{id}")]
+    [ProducesResponseType(typeof(ProductByIdResponse), StatusCodes.Status200OK)]
+    public async Task<IResult> ListProducts(IMediator m, long id)
+    {
+        var request = new ProductByIdRequest(id);
+        return await m.SendCommand(request);
+    }
+
     private static async Task<string> GetToken(string authHeader)
     {
         await ValidateHeader(authHeader);

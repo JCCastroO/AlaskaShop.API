@@ -9,6 +9,7 @@ using AlaskaShop.Infra;
 using AlaskaShop.Infra.Repositories.Auth;
 using AlaskaShop.Infra.Repositories.Auth.Login;
 using AlaskaShop.Infra.Repositories.Auth.Register;
+using AlaskaShop.Infra.Repositories.Product.ById;
 using AlaskaShop.Infra.Repositories.Product.List;
 using AlaskaShop.Infra.Repositories.Product.Register;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -45,6 +46,7 @@ public static class ConfigureServicesExtension
             options.RegisterServicesFromAssemblies(typeof(LoginUserHandler).Assembly);
             options.RegisterServicesFromAssemblies(typeof(RegisterProductHandler).Assembly);
             options.RegisterServicesFromAssemblies(typeof(ListProductHandler).Assembly);
+            options.RegisterServicesFromAssemblies(typeof(ProductByIdHandler).Assembly);
         });
 
     private static void ConfigureAutoMapper(IServiceCollection services)
@@ -52,6 +54,7 @@ public static class ConfigureServicesExtension
         {
             options.AddProfile<RegisterUserProfile>();
             options.AddProfile<RegisterProductProfile>();
+            options.AddProfile<ProductByIdProfile>();
         });
 
     private static void ConfigureRepositories(IServiceCollection services)
@@ -60,6 +63,7 @@ public static class ConfigureServicesExtension
         services.AddScoped<ILoginUserRepository, LoginUserRepository>();
         services.AddScoped<IRegisterProductRepository, RegisterProductRepository>();
         services.AddScoped<IListProductRepository, ListProductRepository>();
+        services.AddScoped<IProductByIdRepository, ProductByIdRepository>();
     }
 
     private static void ConfigureCrypto(IServiceCollection services, ConfigurationManager configuration)
