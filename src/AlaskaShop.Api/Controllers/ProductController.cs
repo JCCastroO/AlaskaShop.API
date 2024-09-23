@@ -33,7 +33,7 @@ public class ProductController : BaseController
     [HttpGet]
     [Route("[controller]/list")]
     [ProducesResponseType(typeof(ListProductResponse), StatusCodes.Status200OK)]
-    public async Task<IResult> ListProducts(IMediator m, [FromQuery] ListProductDto list, [FromQuery] int page, [FromQuery] int pageSize)
+    public async Task<IResult> ListProducts(IMediator m, [FromQuery] ListProductDto list, [FromQuery] int page = 1, [FromQuery] int pageSize = 25)
     {
         var pagination = new PaginationDto() { Page = page, PageSize = pageSize };
         var request = new ListProductRequest(list, pagination);

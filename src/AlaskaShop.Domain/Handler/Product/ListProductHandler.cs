@@ -34,14 +34,17 @@ public class ListProductHandler : IRequestHandler<ListProductRequest, Result<Lis
         if (filtredList.Length == 0)
             return new ListProductResponse([], new PaginationVo() { MaxPage = 1, TotalItems = 0 });
 
-        var list = ListBuilder(filtredList);
+        var list = ListBuilder(filtredList)
+            .Take(request.PageParams.PageSize)
+            .Skip((request.PageParams.Page - 1) * request.PageParams.PageSize)
+            .ToArray();
         var pageInfo = PageInfoBuilder(list, request.PageParams);
 
         return new ListProductResponse(list, pageInfo);
     }
 
     private static PaginationVo PageInfoBuilder(ListProductVo[] list, PaginationDto page)
-        => new PaginationVo()
+        => new()
         {
             MaxPage = list.Length / page.PageSize < 1 ? (list.Length / page.PageSize) + 1 : list.Length / page.PageSize,
             TotalItems = list.Length,

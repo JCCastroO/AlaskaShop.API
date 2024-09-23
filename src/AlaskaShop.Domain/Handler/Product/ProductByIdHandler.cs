@@ -25,7 +25,7 @@ public class ProductByIdHandler : IRequestHandler<ProductByIdRequest, Result<Pro
     {
         var valid = request.Id > 0;
         if (!valid)
-            return new ApplicationException("Request inválido");
+            return new ApplicationException("Request inválido!");
 
         var product = await _repository.GetProduct(request.Id);
         if (product is null)
